@@ -1,0 +1,250 @@
+@import "./fonts.css";
+
+:root {
+  --purple: #432EAB;
+  --asphalt: #8189A3;
+  --plumblum: #262C40;
+  --blueberry: #D4DEFE;
+  --popup-bg: rgba(188, 195, 208, 0.5);
+  --white: #ffffff;
+
+  --font-family: "Proxima-Nova", sans-serif;
+
+
+  --container: 1121px;
+  --input-height: 48px;
+
+  --rounded-sm: 16px;
+  --rounded-md: 24px;
+
+  --padding-lg: 56px;
+  --padding: 24px;
+
+  --margin-xxxl: 64px;
+  --margin-xxl: 40px;
+  --margin-xl: 32px;
+  --margin-lg: 25px;
+  --margin-md: 14px;
+  --margin-sm: 12px;
+
+  --font-size-lg: 24px;
+  --font-size-md: 18px;
+  --font-size-sm: 16px;
+  --font-size-xs: 14px;
+
+  --icon-size: 24px;
+  --icon-size-lg: 128px;
+
+  --shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+  --card-width: 357px;
+  --card-height: 314px;
+  --popup-width: 500px;
+
+  --opacity: 0.6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: normal;
+  font-size: var(--font-size-xs);
+  color: var(--plumblum);
+}
+
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-icon {
+  background: transparent;
+  outline: none;
+  border: none;
+  max-width: var(--icon-size);
+}
+.btn-icon img {
+  width: 100%;
+}
+
+.btn-icon:disabled {
+  opacity: var(--opacity);
+}
+
+.app {
+  background-color: var(--white);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container);
+  padding: var(--padding);
+}
+
+.search {
+  position: relative;
+  margin-top: var(--margin-xxxl);
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid var(--blueberry);
+  outline: none;
+  border-radius: var(--rounded-md);
+  height: var(--input-height);
+  padding-left: var(--padding);
+  padding-right: calc(var(--padding) + var(--icon-size));
+  font-size: var(--font-size-md);
+  transition: border-color 0.5s ;
+  font-family: var(--font-family);
+}
+
+.search-input:focus {
+  border-color: var(--purple)
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: var(--padding);
+  transform: translateY(-50%);
+}
+
+.cards {
+  margin-top: var(--margin-xl);
+  gap: var(--margin-lg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.card {
+  cursor: pointer;
+  background-color: var(--white);
+  border-radius: var(--rounded-md);
+  box-shadow: var(--shadow);
+  padding: var(--padding);
+  max-width: var(--card-width);
+  min-height: var(--card-height);
+}
+
+.card:active {
+  box-shadow: var(--shadow) inset;
+}
+
+
+.card-title {
+  font-size: var(--font-size-lg);
+}
+
+.card-body {
+  margin-top: var(--margin-lg);
+  word-break: break-all;
+}
+.card-info {
+  color: var(--asphalt);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--margin-sm);
+}
+
+.card-info img {
+  margin-right: var(--margin-md);
+}
+
+.pagination {
+  margin-top: var(--margin-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--margin-md);
+}
+
+
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--popup-bg);
+}
+
+.popup {
+  max-width: var(--popup-width);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;  
+  background-color: var(--white);
+  border-radius: var(--rounded-sm);
+  padding: var(--padding);
+  padding-bottom: var(--padding-lg);
+}
+
+.popup-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-body {
+  margin-top: var(--margin-xxl);
+}
+
+.popup-footer {
+  margin-top: var(--margin-xxl);
+}
+
+.popup-footer h3 {
+  font-size: var(--font-size-md);
+}
+
+.popup-footer p {
+  margin-top: var(--margin-sm);
+  color: var(--asphalt);
+  font-size: var(--font-size-sm);
+}
+
+.user-info {
+  width: 100%;
+  border-spacing: 0px var(--margin-md);
+}
+
+
+.user-info tr td:nth-child(1) {
+  font-size: var(--font-size-md);
+}
+
+.user-info tr td:nth-child(2) {
+  font-size: var(--font-size-sm);
+  color: var(--asphalt);
+}
+
+.user-info tr td:not(:last-child){
+  border-right: var(--margin-xxl) solid transparent;
+}
+
+.status {
+  background-color: var(--white);
+  margin: 0 auto;
+  margin-top: var(--margin-xl);
+  max-width: fit-content;
+  text-align: center;
+}
+
+.status img {
+  max-width: var(--icon-size-lg);
+}
+.status p {
+  color: var(--purple);
+  font-size: var(--font-size-md);
+}

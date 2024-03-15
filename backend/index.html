@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backend TEST</title>
+</head>
+<body>
+  <ul>
+    <%
+    var employees = XQuery("for $elem in collaborators return $elem");
+    for(employee in employees) {
+    %>
+    <li><%= employee.fullname %></li>
+    <% } %>
+</ul>
+</body>
+</html>

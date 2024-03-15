@@ -1,0 +1,41 @@
+@media only screen and (max-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .popup {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card {
+   max-width: 100%;
+  }
+  .popup {
+    width: 90%;
+    padding-bottom: var(--padding);
+  }
+
+  .popup-body, .popup-footer {
+    margin-top: var(--margin-lg);
+  }
+
+  .user-info {
+    border-spacing: 0;
+  }
+
+  .user-info tr{
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--margin-sm);
+  }
+
+  .user-info tr td:not(:last-child){
+    border-right: none;
+  }
+  
+
+}
